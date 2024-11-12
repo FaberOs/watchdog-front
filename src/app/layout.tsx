@@ -1,4 +1,21 @@
-import type { Metadata } from "next";
+import React from "react";
+import "./globals.css";
+import { Nunito, Montserrat } from "next/font/google";
+
+const nunito = Nunito({ subsets: ["latin"], weight: ["400", "700"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
+
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <html lang="es" className={nunito.className}>
+      <body>{children}</body>
+    </html>
+  );
+};
+
+export default RootLayout;
+
+/* import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -33,3 +50,4 @@ export default function RootLayout({
     </html>
   );
 }
+ */
